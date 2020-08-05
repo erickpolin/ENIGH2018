@@ -12,7 +12,7 @@ library(tidyverse)
 options(survey.lonely.psu="adjust")
 
 #reading the data
-setwd("C:/Users/Erick/Dropbox/GIC/GITHUB2018/GIC/ENIGH 2018/ENIGH 2018")
+setwd("C:/Users/Erick/Dropbox/GIC/GITHUB2018/GIC/ENIGH 2018/ENIGH2018")
 Conc<-read.dbf("concentradohogar.dbf",as.is = T)
 
 #Keeping Variables of interest
