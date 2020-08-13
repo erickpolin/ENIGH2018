@@ -10,7 +10,7 @@ library(tidyverse)
 options(survey.lonely.psu="adjust")
 
 #reading the data
-setwd("C:/Users/Erick/Dropbox/GIC/2018")
+setwd("C:/Users/Erick/Dropbox/GIC/GITHUB2018/GIC/ENIGH 2018/ENIGH2018")
 Conc<-read.dbf("Conc.dbf",as.is = T)
 
 Conc<-Conc%>%
@@ -62,6 +62,7 @@ row.names(prom_rub)<-Numdec
 
 prom_rub
 
+setwd("C:/Users/Erick/Dropbox/GIC/GITHUB2018/GIC/ENIGH 2018/ENIGH2018/Nacional")
 write.dbf(prom_rub,file="Nacional NO Indigena ingresos por decil y GINI .dbf")
 
 
@@ -88,3 +89,4 @@ names(prom_rub)=c("INGRESO CORRIENTE") #cosa que pudimos y debimos hacer arriba 
 names(a)="GINI"
 
 a
+

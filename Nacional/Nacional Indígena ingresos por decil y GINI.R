@@ -10,7 +10,7 @@ library(tidyverse)
 options(survey.lonely.psu="adjust")
 
 #reading the data
-setwd("C:/Users/Erick/Dropbox/GIC/2018")
+setwd("C:/Users/Erick/Dropbox/GIC/GITHUB2018/GIC/ENIGH 2018/ENIGH2018")
 Conc<-read.dbf("Conc.dbf",as.is = T)
 
 Conc<-Conc%>%
@@ -61,6 +61,8 @@ Numdec<-c("Total", "I", "II", "III","IV", "V", "VI", "VII", "VIII", "IX","X")
 row.names(prom_rub)<-Numdec
 
 prom_rub
+
+setwd("C:/Users/Erick/Dropbox/GIC/GITHUB2018/GIC/ENIGH 2018/ENIGH2018/Nacional")
 
 write.dbf(prom_rub,file="Nacional Indigena ingresos por decil y GINI .dbf")
 
