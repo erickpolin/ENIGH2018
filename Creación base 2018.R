@@ -31,8 +31,8 @@ Poblacion <- Poblacion [ c("folioviv", "foliohog", "numren", "parentesco","habla
 parentescos<-c(101,102,201,202,203,204,205,601,602,606,607,608,615,616)
 
 Poblacion<- Poblacion%>%
-  mutate(HogarIndigena=ifelse(parentesco%in%parentescos&hablaind==1,1,0))
-#|parentesco%in%parentescos&comprenind==1|parentesco%in%parentescos&etnia==1
+  mutate(HogarIndigena=ifelse(parentesco%in%parentescos&hablaind==1,1,0|parentesco%in%parentescos&comprenind==1|parentesco%in%parentescos&etnia==1))
+
 HogaresIndigenas<-Poblacion %>%
   group_by(folioviv,foliohog)%>%
   summarize(HogarIndigena=mean(HogarIndigena))
@@ -148,5 +148,5 @@ for(i in 1:9)
 Conc[Conc$DECIL%in%"0",]$DECIL<-10
 
 
-write.dbf(Conc,file="Conc.dbf")
+write.dbf(Conc,file="Conc2018.dbf")
 
