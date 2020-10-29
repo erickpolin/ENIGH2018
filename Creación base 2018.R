@@ -18,7 +18,7 @@ Conc<-read.dbf("concentradohogar.dbf",as.is = T)
 #Keeping Variables of interest
 Conc <- Conc [ c("folioviv", "foliohog","tot_integ", "ing_cor", "ingtrab", "trabajo", "negocio", "otros_trab", "rentas", "utilidad",
                  "arrenda", "transfer", "jubilacion", "becas", "donativos", "remesas", "bene_gob", "transf_hog", "trans_inst",
-                 "estim_alqu", "otros_ing","factor","upm","est_dis")]
+                 "estim_alqu", "otros_ing","factor","upm","est_dis","tam_loc")]
 
 ################ DEfinir hogares in?genas#################
 Poblacion<-read.dbf("poblacion.dbf",as.is = T)
@@ -146,6 +146,9 @@ for(i in 1:9)
 
 # a lo que le qued? cero (que es la ?ltima observaci?n), ponle el decil 10
 Conc[Conc$DECIL%in%"0",]$DECIL<-10
+
+Conc<-Conc%>%
+  mutate(Small=ifelse(tam_loc>2,1,0))
 
 
 write.dbf(Conc,file="Conc2018.dbf")
