@@ -780,7 +780,7 @@ ingres_por_bottom<-Ming_corbottom_40_income[[2]]
 
 bottom_por_ingresos<-data.frame(c(ingreso_promedio,ingres_por_bottom))
 
-write.dbf(bottom_por_ingresos,file = "bottom_por_ingresos_2010.dbf")
+write.dbf(bottom_por_ingresos,file = "bottom_por_ingresos_2018.dbf")
 
 
 
@@ -795,7 +795,7 @@ Consumo_promedio <- Consumo_promedio[[1]]
 Consumo<-data.frame(c(Consumo_promedio,Consumo_por_bottom))
 
 
-write.dbf(Consumo,file = "Consumo_por_bottom_2010.dbf")
+write.dbf(Consumo,file = "Consumo_por_bottom_2018.dbf")
 
 
 
