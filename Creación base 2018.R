@@ -20,9 +20,11 @@ Conc<-Conc%>%
          "TRABAJO"=trabajo,"NEGOCIO"=negocio,"OTROS_TRAB"=otros_trab,"RENTAS"=rentas,"UTILIDAD"=utilidad,
          "ARRENDA"=arrenda,"TRANSFER"=transfer,"JUBILACION"=jubilacion,"BECAS"=becas,"DONATIVOS"=donativos,
          "REMESAS"=remesas,"BENE_GOB"=bene_gob,"TRANSF_HOG"=transf_hog,"TRANS_INST"=trans_inst,"ESTIM_ALQU"=estim_alqu,
-         "OTROS_ING"=otros_ing,"FACTOR_HOG"=factor,"UPM"=upm,"EST_DIS"=est_dis)
+         "OTROS_ING"=otros_ing,"FACTOR_HOG"=factor,"UPM"=upm,"EST_DIS"=est_dis,tam_loc)
+Conc<-Conc%>%
+  mutate(Small=ifelse(tam_loc==4,1,0))
 
-
+prop.table(table(Conc$Small))
 
 
 
